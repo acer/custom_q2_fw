@@ -67,7 +67,10 @@
 #define EXTERNAL_EEPROM_I2C_BASE_ADDRESS 0b10100010
 
 /* RGB matrix pre*/
+#define RGB_MATRIX_KEYPRESSES // reacts to keypresses
+// #define RGB_MATRIX_KEYRELEASES // reacts to keyreleases (instead of keypresses)
 #define RGB_MATRIX_FRAMEBUFFER_EFFECTS // enable framebuffer effects
+// #define RGB_MATRIX_TYPING_HEATMAP_DECREASE_DELAY_MS 50
 
 // RGB Matrix Animation modes. Explicitly enabled
 // For full list of effects, see:
@@ -103,9 +106,9 @@
 // #define ENABLE_RGB_MATRIX_PIXEL_FRACTAL
 // enabled only if RGB_MATRIX_FRAMEBUFFER_EFFECTS is defined
 #define ENABLE_RGB_MATRIX_TYPING_HEATMAP
-#define ENABLE_RGB_MATRIX_DIGITAL_RAIN
+// #define ENABLE_RGB_MATRIX_DIGITAL_RAIN
 // enabled only of RGB_MATRIX_KEYPRESSES or RGB_MATRIX_KEYRELEASES is defined
-// #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE
+#define ENABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE
 // #define ENABLE_RGB_MATRIX_SOLID_REACTIVE
 // #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_WIDE
 // #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTIWIDE
