@@ -94,14 +94,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         RGB_TOG, RGB_MOD, RGB_VAI, RGB_HUI, RGB_SAI, RGB_SPI, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,   KC_TRNS,          KC_TRNS,
         KC_TRNS, RGB_RMOD,RGB_VAD, RGB_HUD, RGB_SAD, RGB_SPD, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,             KC_TRNS,          KC_TRNS,
         KC_TRNS,          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,             KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS,                            KC_TRNS, KC_TRNS,  KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS)
+        KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS,                            KC_TRNS, KC_TRNS,  KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS),
 
     [_5_NUMPAD] = LAYOUT_ansi_67(
         TD(TD_ESC_GRV),  S(KC_1), S(KC_2),  S(KC_3), S(KC_4), S(KC_5), S(KC_6), KC_7,    KC_8,    KC_9,    KC_0,     KC_MINS,  KC_EQL,   KC_BSPC,          KC_MUTE,
         KC_TAB,          KC_Q,    KC_UP,    KC_E,    KC_R,    S(KC_7), S(KC_8), KC_4,    KC_5,    KC_6,    KC_P,     KC_LBRC,  KC_RBRC,  KC_BSLS,          KC_DEL,
-        MO(_MAC_MOD),    KC_LEFT, KC_DOWN,  KC_RGHT, KC_F,    KC_G,    KC_H,    KC_1,    KC_2,    KC_3,    KC_SCLN,  KC_QUOT,            KC_ENT,           KC_HOME,
+        KC_TRNS,         KC_LEFT, KC_DOWN,  KC_RGHT, KC_F,    KC_G,    KC_H,    KC_1,    KC_2,    KC_3,    KC_SCLN,  KC_QUOT,            KC_ENT,           KC_HOME,
         KC_LSPO,         KC_Z,    KC_X,     KC_C,    KC_V,    KC_B,    KC_N,    KC_0,    KC_COMM, KC_DOT,  KC_SLSH,            KC_RSPC,           KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS,                            KC_0,                               KC_TRNS, KC_TRNS,  TG(_0_MAC_BASE), KC_TRNS, KC_TRNS, KC_TRNS),
+        KC_TRNS, KC_TRNS, KC_TRNS,                            KC_0,                               KC_TRNS, KC_TRNS,  TO(_0_MAC_BASE), KC_TRNS, KC_TRNS, KC_TRNS),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -130,14 +130,14 @@ bool encoder_update_kb(uint8_t index, bool clockwise) {
     if (!encoder_update_user(index, clockwise)) { return false; }
     if (index == 0) {
         if (clockwise) {
-            if (IS_LAYER_ON(_MAC_MOD)){
+            if (IS_LAYER_ON(_2_MAC_MOD)){
                 tap_code_delay(KC_BRIU, 10);
             } else {
                 tap_code_delay(KC_VOLU, 10);   
             }
 
         } else {
-            if (IS_LAYER_ON(_MAC_MOD)){
+            if (IS_LAYER_ON(_2_MAC_MOD)){
                 tap_code_delay(KC_BRID, 10);
             } else {
                 tap_code_delay(KC_VOLD, 10);   

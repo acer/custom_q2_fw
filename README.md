@@ -1,16 +1,19 @@
-# custom_q2_fw
-Custom changes to the Keychron Q2
+# Keychron Q2
 
-Based off of rev 0111 on qmk firmware
+A customizable 65% keyboard.
 
-## Tap Dance
-ESC: Single for ESC, Double for \`
+* Keyboard Maintainer: [Keychron](https://github.com/keychron)
+* Hardware Supported: Keychron Q2
+* Hardware Availability: [Keychron](https://www.keychron.com)
 
-## Key override
-ALT + TAB = LCMD + \` (for macos to switch between windows of the same app)
+Make example for this keyboard (after setting up your build environment):
 
-## Rotary Encoder
-Volume up/down on default layers, brightness up/down on Mac function layers 
+    make keychron/q2/rev_0110:default
 
-## Cadet Shift
-Left and right Shift key has () on tap, and serves as regular shift when held respectively
+Flashing example for this keyboard ([after setting up the bootloadHID flashing environment](https://docs.qmk.fm/#/flashing_bootloadhid))
+
+    make keychron/q2/rev_0110:default:flash
+
+**Reset Key**: Hold down the key located at *K00*, commonly programmed as *Esc* while plugging in the keyboard.
+
+See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
