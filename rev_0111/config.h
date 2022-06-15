@@ -33,4 +33,7 @@
 #define ENCODER_RESOLUTION 4
 
 /* Timing interval to register mod tapping */
-#define TAPPING_TERM 175
+#define TAPPING_TERM 150
+
+/* Keys register as hold if you press a 2nd key */
+#define HOLD_ON_OTHER_KEY_PRESS
