@@ -29,7 +29,11 @@ enum layers{
 
 enum custom_keycodes {
     KC_MISSION_CONTROL = SAFE_RANGE,
-    KC_LAUNCHPAD
+    KC_LAUNCHPAD,
+    SIELP,
+    PROTN,
+    ACW,
+    WORKE
 };
 
 #define KC_WAVE S(KC_GRV)   
@@ -95,8 +99,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_4_FNS] = LAYOUT_ansi_67(
         KC_WAVE, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,   KC_F12,    KC_TRNS,          KC_TRNS,
-        RGB_TOG, RGB_MOD, RGB_VAI, RGB_HUI, RGB_SAI, RGB_SPI, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,   KC_TRNS,          KC_TRNS,
-        KC_TRNS, RGB_RMOD,RGB_VAD, RGB_HUD, RGB_SAD, RGB_SPD, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,             KC_TRNS,          KC_TRNS,
+        RGB_TOG, RGB_MOD, WORKE, RGB_HUI, RGB_SAI, RGB_SPI, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, PROTN, KC_TRNS,  KC_TRNS,   KC_TRNS,          KC_TRNS,
+        KC_TRNS, ACW,SIELP, RGB_HUD, RGB_SAD, RGB_SPD, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,             KC_TRNS,          KC_TRNS,
         KC_TRNS,          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,             KC_TRNS, KC_TRNS,
         KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS,                            KC_TRNS, KC_TRNS,  KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS),
 
@@ -124,6 +128,34 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 host_consumer_send(0);
             }
             return false;  // Skip all further processing of this key
+        case SIELP:
+            if (record->event.pressed) {
+                SEND_STRING("");;
+            } else {
+                host_consumer_send(0);
+            }
+            return false;  // Skip all further processing of this key      
+        case PROTN:
+            if (record->event.pressed) {
+                SEND_STRING("");;
+            } else {
+                host_consumer_send(0);
+            }
+            return false;  // Skip all further processing of this key    
+        case ACW:
+            if (record->event.pressed) {
+                SEND_STRING("");;
+            } else {
+                host_consumer_send(0);
+            }
+            return false;  // Skip all further processing of this key    
+        case WORKE:
+            if (record->event.pressed) {
+                SEND_STRING("");;
+            } else {
+                host_consumer_send(0);
+            }
+            return false;  // Skip all further processing of this key   
         default:
             return true;  // Process all other keycodes normally
     }
@@ -159,6 +191,7 @@ bool encoder_update_kb(uint8_t index, bool clockwise) {
 #endif
 
 void keyboard_post_init_user(void) {
+    rgb_matrix_enable_noeeprom();
     rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_REACTIVE_MULTIWIDE);
     rgb_matrix_sethsv(12,255,159);
     debug_enable=true;
