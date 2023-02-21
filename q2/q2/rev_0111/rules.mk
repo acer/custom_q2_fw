@@ -23,6 +23,7 @@ RGB_MATRIX_DRIVER = CKLED2001
 EEPROM_DRIVER = i2c
 TAP_DANCE_ENABLE = no
 KEY_OVERRIDE_ENABLE = yes
+DYNAMIC_MACRO_ENABLE = yes
 
 # Enter lower-power sleep mode when on the ChibiOS idle thread
 OPT_DEFS += -DCORTEX_ENABLE_WFI_IDLE=TRUE

@@ -37,3 +37,6 @@
 
 /* Keys register as hold if you press a 2nd key */
 #define HOLD_ON_OTHER_KEY_PRESS
+
+/* Disable nesting macros in dynamic macros */
+#define DYNAMIC_MACRO_NO_NESTING
